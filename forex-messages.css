@@ -1,0 +1,224 @@
+/* Forex Messages Styles */
+#forex-messages {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 320px;
+    height: 400px;
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-120%);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    direction: rtl;
+}
+
+#forex-messages.show {
+    transform: translateX(0);
+}
+
+.forex-chat-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #16213e;
+    border-bottom: 1px solid #2a2a4a;
+}
+
+.forex-chat-header i {
+    font-size: 18px;
+    margin-left: 10px;
+    color: #85bb65; /* Dollar green */
+}
+
+.forex-chat-header span {
+    font-size: 16px;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.forex-chat-header button {
+    background: none;
+    border: none;
+    color: #8a8aaa;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.forex-chat-header button:hover {
+    color: #fff;
+}
+
+.forex-messages-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.forex-message {
+    max-width: 90%;
+    background-color: #242444;
+    border-radius: 12px;
+    padding: 10px;
+    margin-right: auto;
+    animation: messageSlideIn 0.3s forwards;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #8a8aaa;
+}
+
+.message-header.dollar {
+    color: #85bb65; /* Dollar green */
+}
+
+.message-header.euro {
+    color: #0066cc; /* Euro blue */
+}
+
+.message-header.yen {
+    color: #ff9900; /* Yen orange */
+}
+
+.message-header.pound {
+    color: #9966cc; /* Pound purple */
+}
+
+.message-source {
+    font-weight: bold;
+}
+
+.message-content {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.message-content p {
+    margin: 0 0 8px 0;
+}
+
+.message-link {
+    display: inline-block;
+    color: #00a8ff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.message-link:hover {
+    text-decoration: underline;
+}
+
+#forex-messages-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #16213e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+    transition: all 0.3s ease;
+}
+
+#forex-messages-toggle i {
+    font-size: 24px;
+    color: #85bb65;
+}
+
+#forex-messages-toggle:hover {
+    transform: scale(1.1);
+}
+
+#forex-messages-toggle.active {
+    background-color: #85bb65;
+}
+
+#forex-messages-toggle.active i {
+    color: #fff;
+}
+
+#forex-messages-toggle.has-notification::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff3366;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+}
+
+/* Dark theme adjustments */
+.dark-theme #forex-messages {
+    background-color: #121224;
+}
+
+.dark-theme .forex-chat-header {
+    background-color: #0c1022;
+}
+
+.dark-theme .forex-message {
+    background-color: #1a1a30;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #forex-messages {
+        width: 280px;
+        height: 350px;
+        bottom: 70px;
+    }
+    
+    #forex-messages-toggle {
+        width: 45px;
+        height: 45px;
+    }
+}

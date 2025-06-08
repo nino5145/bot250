@@ -1,0 +1,401 @@
+/* تحسينات واجهة المستخدم المستقبلية */
+:root {
+  --hologram-color: rgba(0, 255, 230, 0.8);
+  --neon-glow: 0 0 20px rgba(0, 255, 230, 0.7), 0 0 40px rgba(0, 255, 230, 0.4);
+  --future-gradient: linear-gradient(135deg, rgba(0, 247, 255, 1), rgba(0, 102, 255, 1));
+  --glass-effect: rgba(20, 28, 43, 0.4);
+  --future-border: 1px solid rgba(0, 247, 255, 0.3);
+  --cyber-clip: polygon(0 5px, 5px 0, calc(100% - 5px) 0, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px));
+}
+
+/* تحسين الخلفية بتأثير الهولوغرام */
+body {
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(0, 247, 255, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 230, 0.05) 0%, transparent 60%),
+    linear-gradient(to bottom, var(--background-dark), rgba(10, 14, 23, 0.95));
+}
+
+/* تحسين الحاوية الرئيسية */
+#doc__wrapper {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: var(--future-border);
+  box-shadow: 0 0 40px rgba(0, 102, 255, 0.3), inset 0 0 20px rgba(0, 247, 255, 0.1);
+  clip-path: var(--cyber-clip);
+  background: linear-gradient(135deg, 
+    rgba(20, 28, 43, 0.7), 
+    rgba(10, 14, 23, 0.8));
+}
+
+/* تحسين العنوان */
+#title {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: var(--future-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 15px rgba(0, 247, 255, 0.5);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+#title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: var(--future-gradient);
+  box-shadow: var(--neon-glow);
+}
+
+/* تحسين محتوى الصفحة */
+#content__wrapper {
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: var(--future-border);
+  box-shadow: inset 0 0 30px rgba(0, 102, 255, 0.1);
+  clip-path: var(--cyber-clip);
+}
+
+/* تحسين خيارات المنصة */
+.platform-options {
+  position: relative;
+  z-index: 1;
+}
+
+.platform-option {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  clip-path: var(--cyber-clip);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.platform-option::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  clip-path: var(--cyber-clip);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.platform-option:hover::before {
+  opacity: 1;
+  animation: scanner-effect 2s linear infinite;
+}
+
+@keyframes scanner-effect {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* تحسين مربعات الاختيار */
+.pair__wrapper {
+  background: rgba(10, 14, 23, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  clip-path: var(--cyber-clip);
+  border: var(--future-border);
+}
+
+.select-container {
+  position: relative;
+  overflow: visible;
+}
+
+.pair__select,
+.time__select {
+  clip-path: var(--cyber-clip);
+  background: rgba(10, 14, 23, 0.9);
+  border: var(--future-border);
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.pair__select::after,
+.time__select::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.pair__select:hover::after,
+.time__select:hover::after {
+  opacity: 1;
+  animation: select-scan 2s infinite;
+}
+
+@keyframes select-scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* تحسين زر توليد الإشارة */
+#signal {
+  background: linear-gradient(45deg, 
+    rgba(0, 102, 255, 0.9), 
+    rgba(0, 247, 255, 0.9));
+  clip-path: var(--cyber-clip);
+  border: none;
+  box-shadow: 0 0 25px rgba(0, 102, 255, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#signal::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  animation: signal-shine 3s infinite;
+  z-index: -1;
+}
+
+@keyframes signal-shine {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+#signal::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(45deg, 
+    rgba(0, 102, 255, 0.8), 
+    rgba(0, 247, 255, 0.8));
+  clip-path: var(--cyber-clip);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+#signal:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 35px rgba(0, 247, 255, 0.8), 0 0 50px rgba(0, 102, 255, 0.4);
+}
+
+/* تحسين عرض النتيجة */
+#result {
+  clip-path: var(--cyber-clip);
+  border: var(--future-border);
+  position: relative;
+  overflow: visible;
+}
+
+#result::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(45deg, transparent, var(--hologram-color), transparent);
+  clip-path: var(--cyber-clip);
+  opacity: 0;
+  z-index: -1;
+  animation: result-pulse 2s infinite alternate;
+}
+
+@keyframes result-pulse {
+  0% {
+    opacity: 0.3;
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+  }
+  100% {
+    opacity: 0.7;
+    box-shadow: 0 0 40px rgba(0, 247, 255, 0.8);
+  }
+}
+
+/* تحسين الجزيئات */
+.particle {
+  box-shadow: 0 0 20px var(--hologram-color);
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+/* إضافة خطوط هولوغرامية */
+.hologram-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(0, 247, 255, 0.05) 2px,
+    rgba(0, 247, 255, 0.05) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.3;
+}
+
+/* تحسين الوقت المتبقي */
+.rem__time {
+  background: rgba(0, 247, 255, 0.1);
+  border: var(--future-border);
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+  clip-path: var(--cyber-clip);
+  position: relative;
+  overflow: hidden;
+}
+
+.rem__time::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--future-gradient);
+  animation: time-progress 1s linear infinite;
+}
+
+@keyframes time-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* تحسين أيقونة الأخبار */
+#news-assistant-icon {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.8), rgba(0, 247, 255, 0.8));
+  clip-path: var(--cyber-clip);
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+  border: none;
+}
+
+#news-assistant-icon i {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.notification-dot {
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+/* تأثير الهولوغرام على كامل الصفحة */
+.hologram-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 2px,
+      rgba(0, 247, 255, 0.02) 2px,
+      rgba(0, 247, 255, 0.02) 4px
+    );
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
+}
+
+/* تأثير الشبكة ثلاثية الأبعاد */
+.grid-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 247, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 247, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center bottom;
+  animation: grid-move 20s linear infinite;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes grid-move {
+  0% {
+    transform: perspective(500px) rotateX(60deg) translateY(0);
+  }
+  100% {
+    transform: perspective(500px) rotateX(60deg) translateY(40px);
+  }
+}
+
+/* تأثير الضوء المتحرك */
+.light-beam {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(0, 247, 255, 0.1) 0%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+  animation: light-rotate 20s linear infinite;
+}
+
+@keyframes light-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* تحسين تذييل الصفحة */
+.app-footer {
+  background: rgba(10, 14, 23, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: var(--future-border);
+  clip-path: var(--cyber-clip);
+  padding: 15px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.app-footer::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: var(--future-gradient);
+  box-shadow: var(--neon-glow);
+}

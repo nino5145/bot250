@@ -1,0 +1,287 @@
+/* تحسينات الاستجابة لجميع أحجام الشاشات */
+
+/* إعدادات عامة للتصميم المتجاوب */
+@media screen and (max-width: 1400px) {
+  #doc__wrapper {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #doc__wrapper {
+    max-width: 95%;
+    margin: 15px auto;
+  }
+  
+  #title {
+    font-size: 2.3rem;
+  }
+}
+
+/* الأجهزة اللوحية والشاشات المتوسطة */
+@media screen and (max-width: 992px) {
+  #doc__wrapper {
+    padding: 15px;
+  }
+  
+  #content__wrapper {
+    padding: 15px;
+  }
+  
+  .platform-options {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .platform-option {
+    flex: 0 0 45%;
+    justify-content: center;
+  }
+  
+  .pair__wrapper {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  #signal {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+  
+  #result {
+    padding: 20px 40px;
+    font-size: 1.8rem;
+  }
+}
+
+/* الهواتف الذكية والشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  #doc__wrapper {
+    margin: 5px auto;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  #title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .platform-options {
+    gap: 10px;
+  }
+  
+  .platform-option {
+    flex: 0 0 100%;
+    padding: 10px;
+  }
+  
+  .select-label {
+    font-size: 1rem;
+  }
+  
+  .pair__select,
+  .time__select {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+  
+  #signal {
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 12px 15px;
+    letter-spacing: 1px;
+  }
+  
+  #result {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    min-width: 180px;
+  }
+  
+  .rem__time {
+    font-size: 1rem;
+  }
+  
+  /* تحسين عرض لوحة إعدادات الصوت */
+  #voice-settings-panel {
+    width: 90% !important;
+    right: 5% !important;
+    left: 5% !important;
+  }
+}
+
+/* الهواتف الصغيرة */
+@media screen and (max-width: 480px) {
+  #doc__wrapper {
+    border-radius: 10px;
+  }
+  
+  #title {
+    font-size: 1.5rem;
+  }
+  
+  #content__wrapper {
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .platform-logo {
+    height: 25px !important;
+  }
+  
+  .pair__wrapper {
+    padding: 10px;
+  }
+  
+  .select-label {
+    margin-bottom: 8px;
+  }
+  
+  .pair__select,
+  .time__select {
+    padding: 10px;
+  }
+  
+  #signal {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  #result {
+    padding: 12px 25px;
+    font-size: 1.3rem;
+    min-width: 150px;
+  }
+  
+  /* تعديل أزرار التحكم */
+  .news-assistant-icon {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 15px !important;
+    right: 15px !important;
+  }
+}
+
+/* تحسينات للشاشات الصغيرة جداً */
+@media screen and (max-width: 360px) {
+  #title {
+    font-size: 1.3rem;
+  }
+  
+  .select-label {
+    font-size: 0.9rem;
+  }
+  
+  .pair__select,
+  .time__select {
+    font-size: 0.9rem;
+  }
+  
+  #signal {
+    font-size: 0.8rem;
+  }
+  
+  #result {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+}
+
+/* تحسينات للاتجاه الأفقي في الهواتف */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  #doc__wrapper {
+    margin: 5px auto;
+    padding: 10px;
+  }
+  
+  #title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .pair__wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  #trade__wrapper {
+    margin-bottom: 10px;
+  }
+  
+  #center {
+    padding: 15px 0;
+  }
+  
+  .app-footer {
+    margin-top: 10px;
+    padding: 10px;
+  }
+}
+
+/* تحسينات للشاشات الكبيرة جداً */
+@media screen and (min-width: 1600px) {
+  #doc__wrapper {
+    max-width: 1200px;
+  }
+  
+  #title {
+    font-size: 3rem;
+  }
+  
+  .pair__select,
+  .time__select {
+    font-size: 1.2rem;
+  }
+  
+  #signal {
+    font-size: 1.3rem;
+    max-width: 350px;
+  }
+  
+  #result {
+    font-size: 2.2rem;
+  }
+}
+
+/* تحسينات للأجهزة التي تدعم اللمس */
+@media (hover: none) {
+  .platform-option:hover,
+  .pair__select:hover,
+  .time__select:hover,
+  #signal:hover {
+    transform: none;
+  }
+  
+  #signal:active {
+    transform: scale(0.98);
+  }
+  
+  .select-container:hover .select-glow {
+    opacity: 0;
+  }
+}
+
+/* تحسينات للطباعة */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  #doc__wrapper {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .particle,
+  .floating-arrow,
+  #news-assistant-icon,
+  .notification-dot {
+    display: none !important;
+  }
+}

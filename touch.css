@@ -1,0 +1,131 @@
+/**
+ * تحسينات للأجهزة اللمسية
+ */
+
+/* تحسينات عامة للأجهزة اللمسية */
+.touch-device {
+    -webkit-tap-highlight-color: rgba(0, 247, 255, 0.2);
+    touch-action: manipulation;
+}
+
+/* تأثير النقر على الأجهزة اللمسية */
+.touch-active {
+    transform: scale(0.98) !important;
+    transition: transform 0.1s ease !important;
+}
+
+/* زيادة مساحة النقر للعناصر التفاعلية */
+button, 
+select, 
+.platform-option {
+    min-height: 44px;
+}
+
+/* تحسين القوائم المنسدلة على الأجهزة اللمسية */
+@media (pointer: coarse) {
+    .pair__select,
+    .time__select {
+        font-size: 16px !important; /* منع تكبير الصفحة تلقائياً في iOS */
+    }
+    
+    /* زيادة المساحة بين عناصر القائمة */
+    .pair__select option,
+    .time__select option {
+        padding: 10px !important;
+    }
+    
+    /* تحسين أزرار الاختيار */
+    .platform-option {
+        padding: 12px !important;
+    }
+    
+    /* تحسين زر توليد الإشارة */
+    #signal {
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+    }
+    
+    /* إلغاء تأثيرات التحويم التي لا تعمل على الأجهزة اللمسية */
+    .platform-option:hover,
+    #signal:hover,
+    .pair__select:hover,
+    .time__select:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    /* تحسين تأثير النقر */
+    .platform-option:active,
+    #signal:active {
+        transform: scale(0.98) !important;
+        transition: transform 0.1s ease !important;
+    }
+}
+
+/* تحسينات للأجهزة اللمسية الصغيرة */
+@media (pointer: coarse) and (max-width: 480px) {
+    /* زيادة حجم الخط للقراءة */
+    body {
+        font-size: 16px !important;
+    }
+    
+    /* زيادة المساحة بين العناصر */
+    .pair__wrapper {
+        gap: 20px !important;
+    }
+    
+    /* تحسين أزرار الاختيار */
+    .platform-option {
+        margin-bottom: 10px !important;
+    }
+    
+    /* تحسين زر النتيجة */
+    #result {
+        padding: 15px 25px !important;
+    }
+    
+    /* تحسين أيقونة الأخبار */
+    .news-assistant-icon {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    /* تحسين لوحة إعدادات الصوت */
+    #voice-settings-panel {
+        padding: 20px !important;
+    }
+    
+    #voice-settings-panel input[type="range"] {
+        height: 30px !important;
+    }
+    
+    #voice-settings-panel input[type="checkbox"] {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+/* تحسينات للأجهزة اللمسية في الوضع الأفقي */
+@media (pointer: coarse) and (orientation: landscape) {
+    /* تحسين التخطيط في الوضع الأفقي */
+    #doc__wrapper {
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+    }
+    
+    /* تقليل المساحات الداخلية */
+    #content__wrapper {
+        padding: 10px !important;
+    }
+    
+    /* تحسين عرض أزرار المنصة */
+    .platform-options {
+        flex-direction: row !important;
+    }
+    
+    /* تحسين عرض حقول الاختيار */
+    .pair__wrapper {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
