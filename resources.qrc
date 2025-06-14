@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/index.html</file>
+        <file>resources/css/style.css</file>
+        <file>resources/css/responsive.css</file>
+        <file>resources/css/touch.css</file>
+        <file>resources/css/news-notifications.css</file>
+        <file>resources/css/forex-messages.css</file>
+        <file>resources/css/future-ui-enhancements.css</file>
+        <file>resources/css/title-animation.css</file>
+        <file>resources/css/title-animation-styles.css</file>
+        <file>resources/css/logo-style.css</file>
+        <file>resources/js/voice-quality.js</file>
+        <file>resources/js/direct-speech.js</file>
+        <file>resources/js/robot-voice.js</file>
+        <file>resources/js/audio-alerts.js</file>
+        <file>resources/js/api-client.js</file>
+        <file>resources/js/script.js</file>
+        <file>resources/js/news-notifications.js</file>
+        <file>resources/js/forex-messages.js</file>
+        <file>resources/js/future-launcher.js</file>
+        <file>resources/js/future-platform-connector.js</file>
+        <file>resources/js/future-effects.js</file>
+        <file>resources/js/future-voice-commands.js</file>
+        <file>resources/js/future-hologram.js</file>
+        <file>resources/js/title-animation.js</file>
+        <file>resources/js/future-title-effects.js</file>
+        <file>resources/js/mobile-fixes.js</file>
+        <file>resources/js/test-forex-messages.js</file>
+        <file>resources/assetsimages/258de5ad-9442-4325-9296-ba2650d2c59a.png</file>
+        <file>resources/assetsimages/Pocket-Option-Logo.png</file>
+        <file>resources/assetsimages/codigos-de-descuentos-quotex.webp</file>
+    </qresource>
+</RCC>
